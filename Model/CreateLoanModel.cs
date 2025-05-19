@@ -1,0 +1,20 @@
+﻿using System.ComponentModel.DataAnnotations;
+using LibraryManager.Api.Entity;
+using LibraryManager.Api.Enum;
+
+namespace LibraryManager.Api.Model
+{
+    public class CreateLoanModel
+    {
+        public int  IdUser { get; set; }
+        public int IdBook { get; set; }
+      
+
+     
+        public int QuantityDay { get; set; }
+
+
+        public Loan FromEntityLoan()
+            => new Loan(IdUser, IdBook, QuantityDay);
+    }
+}
