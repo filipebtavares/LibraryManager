@@ -1,11 +1,10 @@
-﻿
-using LibraryManager.Api.Model;
+﻿using LibraryManager.Api.Model;
 using LibraryManager.Api.Persistence;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace LibraryManager.Api.Controllers
+namespace LibraryManager.Api.Presentation
 {
     [Route("api/book")]
     [ApiController]
@@ -36,7 +35,7 @@ namespace LibraryManager.Api.Controllers
         }
 
 
-       
+
         [HttpPost]
         public IActionResult Post(CreateBookModel createBook)
         {

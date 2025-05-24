@@ -2,7 +2,7 @@
 using LibraryManager.Api.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LibraryManager.Api.Controllers
+namespace LibraryManager.Api.Presentation
 {
     [Route("api/loan")]
     [ApiController]
@@ -29,7 +29,7 @@ namespace LibraryManager.Api.Controllers
             _context.Loans.Add(loan);
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(GetLoanById), new {id = loan.Id}, loanModel);
+            return CreatedAtAction(nameof(GetLoanById), new { id = loan.Id }, loanModel);
         }
 
         [HttpGet]

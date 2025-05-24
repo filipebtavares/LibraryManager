@@ -4,7 +4,7 @@ using LibraryManager.Api.Model;
 using LibraryManager.Api.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LibraryManager.Api.Controllers
+namespace LibraryManager.Api.Presentation
 {
     [Route("api/user")]
     [ApiController]
@@ -49,7 +49,7 @@ namespace LibraryManager.Api.Controllers
             _context.Users.Add(user);
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(GetUserById), new {id = user.Id}, modelUser);
+            return CreatedAtAction(nameof(GetUserById), new { id = user.Id }, modelUser);
         }
 
         [HttpDelete("{id}")]

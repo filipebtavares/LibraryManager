@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using LibraryManager.Api.Entity;
 
-namespace LibraryManager.Api.Model
+namespace LibraryManager.Api.Presentation.Model
 {
     public class CreateUserModel
     {
