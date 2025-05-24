@@ -1,4 +1,4 @@
-﻿namespace LibraryManager.Api.Enum
+﻿namespace LibraryManager.Api.Domain.Enum
 {
     public enum StatusLoanEnum
     {

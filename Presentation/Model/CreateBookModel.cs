@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using LibraryManager.Api.Entity;
+using LibraryManager.Api.Domain.Entity;
 
 namespace LibraryManager.Api.Presentation.Model
 {

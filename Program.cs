@@ -1,5 +1,5 @@
 using LibraryManager.Api.Application;
-using LibraryManager.Api.ExceptionHandler;
+using LibraryManager.Api.Domain.ExceptionHandler;
 using LibraryManager.Api.Persistence;
 using Microsoft.EntityFrameworkCore;
 

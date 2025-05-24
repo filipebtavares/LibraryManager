@@ -1,4 +1,4 @@
-﻿using LibraryManager.Api.Entity;
+﻿using LibraryManager.Api.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManager.Api.Persistence

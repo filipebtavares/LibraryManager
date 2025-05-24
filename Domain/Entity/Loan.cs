@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using LibraryManager.Api.Enum;
+using LibraryManager.Api.Domain.Enum;
 
-namespace LibraryManager.Api.Entity
+namespace LibraryManager.Api.Domain.Entity
 {
     public class Loan : Base
     {
-       
+
         public int IdUser { get; private set; }
-        public User  User { get; private set; }
+        public User User { get; private set; }
 
         public int IdBook { get; private set; }
         public Book Book { get; private set; }
@@ -17,7 +17,7 @@ namespace LibraryManager.Api.Entity
 
         public List<User> Users { get; private set; }
 
-   
+
         public StatusLoanEnum StatusLoan { get; private set; }
         public int QuantityDay { get; private set; }
 
@@ -25,7 +25,7 @@ namespace LibraryManager.Api.Entity
         {
         }
 
-        public Loan(int idUser, int idBook,      int quantityday)
+        public Loan(int idUser, int idBook, int quantityday)
             : base()
         {
             IdUser = idUser;
@@ -33,7 +33,7 @@ namespace LibraryManager.Api.Entity
             LoanDate = DateTime.Now;
             StatusLoan = StatusLoanEnum.InProgress;
             QuantityDay = quantityday;
-           
+
 
 
             Users = [];
