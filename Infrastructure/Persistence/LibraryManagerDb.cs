@@ -1,7 +1,7 @@
 ﻿using LibraryManager.Api.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibraryManager.Api.Persistence
+namespace LibraryManager.Api.Infrastructure.Persistence
 {
     public class LibraryManagerDb : DbContext
 
@@ -9,12 +9,12 @@ namespace LibraryManager.Api.Persistence
         public DbSet<Book> Books { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Loan> Loans { get; set; }
-       
+
 
         public LibraryManagerDb(DbContextOptions<LibraryManagerDb> options)
             : base(options)
         {
-            
+
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
