@@ -1,6 +1,6 @@
+using LibraryManager.Api.Application;
 using LibraryManager.Api.ExceptionHandler;
 using LibraryManager.Api.Persistence;
-using LibraryManager.Api.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
