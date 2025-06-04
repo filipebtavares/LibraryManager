@@ -62,9 +62,10 @@ namespace LibraryManager.Api.Presentation.Controller
             return NoContent();
         }
 
-        
-
-
-
+        [HttpPut("{id}")]
+        public IActionResult UpdateUser(int id, UpdateUserModel updateUser)
+        {
+            return NoContent();
+        }
     }
 }
