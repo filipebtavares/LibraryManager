@@ -1,4 +1,4 @@
-﻿namespace LibraryManager.Api.Application
+﻿namespace LibraryManager.Api.Application.Service
 {
     public interface IConfigService
     {

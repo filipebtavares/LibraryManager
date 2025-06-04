@@ -1,10 +1,10 @@
-﻿using LibraryManager.Api.Model;
-using LibraryManager.Api.Persistence;
+﻿using LibraryManager.Api.Infrastructure.Persistence;
+using LibraryManager.Api.Presentation.Model;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace LibraryManager.Api.Presentation
+namespace LibraryManager.Api.Presentation.Controller
 {
     [Route("api/book")]
     [ApiController]
