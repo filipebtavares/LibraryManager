@@ -71,5 +71,11 @@ namespace LibraryManager.Api.Presentation.Controller
             }
             return NoContent();
         }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateBook(int id, UpdateBookModel modelUpdate)
+        {
+            return NoContent();
+        }
     }
 }
