@@ -8,9 +8,6 @@ namespace LibraryManager.Api.Presentation.Model
     {
         public int IdUser { get; set; }
         public int IdBook { get; set; }
-
-
-
         public int QuantityDay { get; set; }
 
 

@@ -1,6 +1,20 @@
-﻿namespace LibraryManager.Api.Presentation.Validation
+﻿using FluentValidation;
+using LibraryManager.Api.Domain.Entity;
+using LibraryManager.Api.Presentation.Model;
+
+namespace LibraryManager.Api.Presentation.Validation
 {
-    public class UserCreateValidator
+    public class UserCreateValidator : AbstractValidator<CreateUserModel>
     {
+        public UserCreateValidator()
+        {
+            RuleFor(user => user.Name)
+                .NotNull().WithMessage("O nome do usuário é obrigatorio.")
+                .MaximumLength(50).WithMessage("O nome do usuario não pode conter mais qu 50 caracteres.");
+
+            RuleFor(user => user.Email)
+                .NotNull().WithMessage("O email do usuário é obrigatorio.")
+                .MaximumLength(50).WithMessage("O email do usuário não pode conter mais que 50 caracteres.");
+        }
     }
 }
