@@ -19,9 +19,9 @@ namespace LibraryManager.Api.Presentation.Controller
         [HttpPost]
         public IActionResult PostLoan(CreateLoanModel loanModel)
         {
-            if (loanModel.QuantityDay > 30)
+            if (!ModelState.IsValid)
             {
-                return BadRequest("Os dias que voce pode alugar um livro, não pode ultrapassar 30 dias.");
+                return BadRequest(ModelState);
             }
 
             var loan = loanModel.FromEntityLoan();

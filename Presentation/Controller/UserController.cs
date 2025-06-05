@@ -35,14 +35,9 @@ namespace LibraryManager.Api.Presentation.Controller
         [HttpPost]
         public IActionResult Post(CreateUserModel modelUser)
         {
-            if (string.IsNullOrWhiteSpace(modelUser.Name))
+            if (!ModelState.IsValid)
             {
-                return BadRequest("O nome é obrigatorio e não pode ser em branco.");
-            }
-
-            if (string.IsNullOrWhiteSpace(modelUser.Email))
-            {
-                return BadRequest("O email é obrigatorio e não pode ser em branco.");
+                return BadRequest(ModelState);
             }
 
             var user = modelUser.FromEntity();

@@ -39,19 +39,9 @@ namespace LibraryManager.Api.Presentation.Controller
         [HttpPost]
         public IActionResult Post(CreateBookModel createBook)
         {
-            if (string.IsNullOrWhiteSpace(createBook.Synopsis))
+           if (!ModelState.IsValid)
             {
-                return BadRequest("O Sinopse não pode ser em branco.");
-            }
-
-            if (string.IsNullOrWhiteSpace(createBook.Author))
-            {
-                return BadRequest("O Author não pode ser em branco.");
-            }
-
-            if (string.IsNullOrWhiteSpace(createBook.Title))
-            {
-                return BadRequest("O title não pode ser em branco.");
+                return BadRequest(ModelState);
             }
 
             var book = createBook.ToEntity();
