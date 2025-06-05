@@ -1,3 +1,5 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using LibraryManager.Api.Application.Service;
 using LibraryManager.Api.Domain.ExceptionHandler;
 using LibraryManager.Api.Infrastructure.Persistence;
@@ -22,7 +24,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-
+builder.Services.AddValidatorsFromAssemblyContaining<Program>();
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
 
 
 var app = builder.Build();

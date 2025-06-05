@@ -1,5 +1,7 @@
-﻿using LibraryManager.Api.Infrastructure.Persistence;
+﻿using FluentValidation;
+using LibraryManager.Api.Infrastructure.Persistence;
 using LibraryManager.Api.Presentation.Model;
+using LibraryManager.Api.Presentation.Validation;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,10 +14,12 @@ namespace LibraryManager.Api.Presentation.Controller
     {
 
         private readonly LibraryManagerDb _context;
+     
 
-        public BookController(LibraryManagerDb context)
+        public BookController(LibraryManagerDb context, IValidator<CreateUserModelValidator> validator)
         {
             _context = context;
+            
         }
 
 

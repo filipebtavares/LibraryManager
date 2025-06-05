@@ -4,9 +4,9 @@ using LibraryManager.Api.Presentation.Model;
 
 namespace LibraryManager.Api.Presentation.Validation
 {
-    public class UserCreateValidator : AbstractValidator<CreateUserModel>
+    public class CreateUserModelValidator : AbstractValidator<CreateUserModel>
     {
-        public UserCreateValidator()
+        public CreateUserModelValidator()
         {
             RuleFor(user => user.Name)
                 .NotNull().WithMessage("O nome do usuário é obrigatorio.")
@@ -14,7 +14,8 @@ namespace LibraryManager.Api.Presentation.Validation
 
             RuleFor(user => user.Email)
                 .NotNull().WithMessage("O email do usuário é obrigatorio.")
-                .MaximumLength(50).WithMessage("O email do usuário não pode conter mais que 50 caracteres.");
+                .EmailAddress().WithMessage("O email não é valido.");
+              
         }
     }
 }

@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Rewrite;
 
 namespace LibraryManager.Api.Presentation.Validation
 {
-    public class BookCreateValidator : AbstractValidator<CreateBookModel>
+    public class CreateBookModelValidator : AbstractValidator<CreateBookModel>
     {
-        public BookCreateValidator()
+        public CreateBookModelValidator()
         {
             RuleFor(book => book.Title)
                 .MinimumLength(80).WithMessage("O titulo não pode conter mais que 80 caracteries.")

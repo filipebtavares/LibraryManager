@@ -4,9 +4,9 @@ using LibraryManager.Api.Presentation.Model;
 
 namespace LibraryManager.Api.Presentation.Validation
 {
-    public class LoanCreateValidator : AbstractValidator<CreateLoanModel>
+    public class CreateLoanModelValidator : AbstractValidator<CreateLoanModel>
     {
-        public LoanCreateValidator()
+        public CreateLoanModelValidator()
         {
             RuleFor(loan => loan.IdBook)
                 .GreaterThan(0).WithMessage("O Id deve ser valido.")
