@@ -4,9 +4,9 @@ using LibraryManager.Api.Presentation.Model;
 
 namespace LibraryManager.Api.Presentation.Validation
 {
-    public class CreateUserModelValidator : AbstractValidator<CreateUserModel>
+    public class UserModelValidator : AbstractValidator<CreateUserModel>
     {
-        public CreateUserModelValidator()
+        public UserModelValidator()
         {
             RuleFor(user => user.Name)
                 .NotNull().WithMessage("O nome do usuário é obrigatorio.")
