@@ -2,8 +2,12 @@
 
 namespace LibraryManager.Api.Application.Service
 {
-    public class IBookService
+    public interface IBookService
     {
-        ResultViewModel
+        ResultViewModel<List<BookItemViewModel>> GetAll();
+        ResultViewModel<BookViewModel> GetById(int id);
+        ResultViewModel<int> Post(CreateBookModel createBook);
+        ResultViewModel DeleteBook(int id);
+
     }
 }
