@@ -1,6 +1,7 @@
 ﻿namespace LibraryManager.Api.Application.Service
 {
-    public class IUserService
+    public interface IUserService
     {
+      ResultView
     }
 }
