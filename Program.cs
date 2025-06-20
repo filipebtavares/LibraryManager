@@ -1,8 +1,8 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using LibraryManager.Api.Application.Service;
-using LibraryManager.Api.Domain.ExceptionHandler;
 using LibraryManager.Api.Infrastructure.Persistence;
+using LibraryManager.Api.Presentation.Middlewares.ExceptionHandler;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

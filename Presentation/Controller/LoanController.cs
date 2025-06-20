@@ -56,11 +56,5 @@ namespace LibraryManager.Api.Presentation.Controller
             return NoContent();
         }
 
-        [HttpPut("{id}")]
-        public IActionResult UpdateLoan(int id, UpdateLoanModel updateLoan)
-        {
-            return NoContent();
-        }
-
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LibraryManager.Api.Domain.ExceptionHandler
+namespace LibraryManager.Api.Presentation.Middlewares.ExceptionHandler
 {
     public class ApiExceptionHandler : IExceptionHandler
     {
