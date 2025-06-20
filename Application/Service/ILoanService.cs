@@ -1,6 +1,12 @@
-﻿namespace LibraryManager.Api.Application.Service
+﻿using LibraryManager.Api.Presentation.Model;
+
+namespace LibraryManager.Api.Application.Service
 {
-    public class ILoanService
+    public interface ILoanService
     {
+        ResultViewModel<int> PostLoan(CreateLoanModel loanModel);
+        ResultViewModel<List<LoanItemViewModel>> GetAll();
+        ResultViewModel<LoanViewModel> GetLoanById(int id);
+        ResultViewModel DeleteLoan(int id);
     }
 }

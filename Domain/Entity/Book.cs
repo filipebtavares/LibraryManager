@@ -28,5 +28,6 @@ namespace LibraryManager.Api.Domain.Entity
             Loans = [];
 
         }
+
     }
 }

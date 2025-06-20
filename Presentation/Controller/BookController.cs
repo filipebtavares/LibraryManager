@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using LibraryManager.Api.Application.Service;
 using LibraryManager.Api.Infrastructure.Persistence;
 using LibraryManager.Api.Presentation.Model;
 using LibraryManager.Api.Presentation.Validation;
@@ -14,12 +15,13 @@ namespace LibraryManager.Api.Presentation.Controller
     {
 
         private readonly LibraryManagerDb _context;
+        private readonly IBookService _service;
      
 
-        public BookController(LibraryManagerDb context, IValidator<CreateUserModelValidator> validator)
+        public BookController(LibraryManagerDb context, IValidator<CreateUserModelValidator> validator, IBookService service)
         {
             _context = context;
-            
+            _service = service;
         }
 
 
