@@ -28,16 +28,22 @@ namespace LibraryManager.Api.Presentation.Controller
         [HttpGet]
         public IActionResult GetAll()
         {
-            var resultAll = _context.Books.ToList();
-            return Ok(resultAll);
+            var result = _service.GetAll();
+            return Ok(result);
         }
 
-        [HttpGet("{id}")]
 
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var booksId = _context.Books.SingleOrDefault(i => i.Id == id);
-            return Ok(booksId);
+            var result = _service.GetById(id);
+
+            if (!result.IsSucess)
+            {
+                return BadRequest(result.Message);
+            }
+
+            return Ok(result);
         }
 
 
@@ -45,27 +51,23 @@ namespace LibraryManager.Api.Presentation.Controller
         [HttpPost]
         public IActionResult Post(CreateBookModel createBook)
         {
-           if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            var result = _service.Post(createBook);
 
-            var book = createBook.ToEntity();
-
-            _context.Books.Add(book);
-            _context.SaveChanges();
-
-            return CreatedAtAction(nameof(GetById), new { id = book.Id }, createBook);
+            return CreatedAtAction(nameof(GetById), new { id = result.Data }, createBook);
         }
+
 
         [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
         {
-            if (!_context.Books.Any(i => i.Id == id))
+            var result = _service.DeleteBook(id);
+
+            if (!result.IsSucess)
             {
-                return BadRequest("O Id informado não foi encontrado");
+                return BadRequest(result.Message);
             }
-            return NoContent();
+
+            return Ok(result);
         }
     }
 }
